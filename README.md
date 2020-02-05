@@ -117,7 +117,6 @@ Example Playbook
 
 ```
 - hosts: servers
-  become: true
   vars_files:
     - my-vars.yml
   roles:
