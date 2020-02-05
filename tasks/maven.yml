@@ -1,0 +1,6 @@
+---
+- name: Download and extract Apache Maven
+  unarchive:
+    src: http://mirrors.sonic.net/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+    dest: /opt/
+    remote_src: yes

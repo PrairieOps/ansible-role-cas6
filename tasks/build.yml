@@ -13,7 +13,7 @@
 
 - name: Build JSON Web Key Generator
   command: >
-    bash -c "mvn clean package"
+    bash -c "/opt/apache-maven-3.6.3/bin/mvn"
   args:
     chdir: /usr/src/json-web-key-generator
     creates: /usr/src/json-web-key-generator/target/json-web-key-generator-0.3-jar-with-dependencies.jar
@@ -89,7 +89,7 @@
 
 - name: Build CAS
   command: >
-    ./mvnw clean package
+    /opt/apache-maven-3.6.3/bin/mvn clean package
   args:
     chdir: /usr/src/cas-overlay
   environment:

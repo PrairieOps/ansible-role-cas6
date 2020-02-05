@@ -1,5 +1,7 @@
 ---
 # tasks file for cas
+- include: maven.yml
+
 - include: yum.yml
 
 - include: assets.yml

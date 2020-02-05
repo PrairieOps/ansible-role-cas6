@@ -1,5 +1,5 @@
 ---
 - name: Yum packages
   yum:
-    name: ['java-11-openjdk-headless', 'git', 'maven']
+    name: ['java-11-openjdk-headless', 'git']
     state: present
