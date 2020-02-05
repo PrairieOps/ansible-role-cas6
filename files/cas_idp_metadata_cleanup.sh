@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # a very quick and dirty cleanup of the IdP metadata as described here:
-# https://apereo.github.io/cas/5.0.x/installation/Configuring-SAML2-Authentication.html#idp-metadata
+# https://apereo.github.io/cas/6.1.x/installation/Configuring-SAML2-Authentication.html#idp-metadata
 
 # takes full path of idp-metadata.xml as an argument.
 # Prints massaged metadata to stdout.

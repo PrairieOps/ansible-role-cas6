@@ -11,7 +11,7 @@ cas_host_name: "cas01.example.org"
 
 # Specify a cas overlay
 cas_overlay_repo: "https://github.com/apereo/cas-overlay-template.git"
-cas_overlay_version: "5.2"
+cas_overlay_version: "6.1"
 
 # SSL paths
 ssl_cert_path: /etc/pki/tls/certs
@@ -26,7 +26,7 @@ cas_screen_label_accesskey: u
 cas_authenticationFailure_AccountNotFoundException: Invalid Credendtials
 
 # Expiration policies
-# https://apereo.github.io/cas/4.2.x/installation/Configuring-Ticket-Expiration-Policy.html
+# https://apereo.github.io/cas/6.1.x/ticketing/Configuring-Ticket-Expiration-Policy.html#ticket-expiration-policies
 
 # CAS session hard expiration (seconds)
 # Sessions should always die after this period, regardless of activity
@@ -51,7 +51,7 @@ cas_hide_pac4jUrls: false
 cas_pac4j_saml: !!null
 
 # CAS Services
-# See https://apereo.github.io/cas/4.2.x/installation/Service-Management.html
+# See https://apereo.github.io/cas/6.1.x/services/Service-Management.html
 cas_services:
   - file: "wildCardCamelCase"
     serviceId: "^https://.*"

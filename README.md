@@ -1,15 +1,15 @@
-OKEduOps.cas5
+PrairieOps.cas6
 =========
 
-[CAS 5](https://apereo.github.io/cas/5.0.x/index.html) for OKEduOps.
+[CAS 6](https://apereo.github.io/cas/6.1.x/index.html) Ansible role by PrairieOps for OULibraries.
 Forked from [OULibraries CAS 4.x ansible role](https://github.com/OULibraries/ansible-role-cas)
 
-Currently focused on [LDAP integration](https://apereo.github.io/cas/5.0.x/installation/LDAP-Authentication.html), and [SAML2 integration](https://apereo.github.io/cas/5.0.x/installation/Configuring-SAML2-Authentication.html).
+Currently focused on [LDAP integration](https://apereo.github.io/cas/6.1.x/installation/LDAP-Authentication.html), and [SAML2 integration](https://apereo.github.io/cas/6.1.x/installation/Configuring-SAML2-Authentication.html).
 
 Requirements
 ------------
 
-CentOS 7.x.
+Expects to be deployed to [Red Hat Universal Base Image 7](https://access.redhat.com/containers/#/registry.access.redhat.com/ubi7/ubi), but will probably work fine with CentOS/RHEL 7.
 
 Role Variables
 --------------
@@ -31,7 +31,7 @@ cas_overlay_repo:
 cas_overlay_version: 
 ```
 
-You can optionally enable a [SAML2 Identity Provider](https://apereo.github.io/cas/5.0.x/installation/Configuring-SAML2-Authentication.html) service in cas.
+You can optionally enable a [SAML2 Identity Provider](https://apereo.github.io/cas/6.1.x/installation/Configuring-SAML2-Authentication.html) service in cas.
 To do so, set:
 ```
 cas_saml2_idp: true
@@ -112,9 +112,6 @@ See defaults/main.yml for the rest
 Dependencies
 ------------
 
-OULibraries.centos7
-OULibraries.users
-
 Example Playbook
 ----------------
 
@@ -124,9 +121,7 @@ Example Playbook
   vars_files:
     - my-vars.yml
   roles:
-    - OULibraries.centos7
-    - OKEduOps.cas5
-    - OULibraries.users
+    - PrairieOps.cas6
 ```
 
 License

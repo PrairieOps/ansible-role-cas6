@@ -1,7 +1,7 @@
 galaxy_info:
   author: Jason Sherman
-  description: CAS for OU Libraries
-  company: University of Oklahoma Libraries
+  description: CAS6 for University of Oklahoma Libraries
+  company: PrairieOps LLC
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -16,7 +16,7 @@ galaxy_info:
   # - CC-BY
   license: license (GPLv2, CC-BY, etc)
 
-  min_ansible_version: 1.2
+  min_ansible_version: 2.9.4
 
   # Optionally specify the branch Galaxy will use when accessing the GitHub
   # repo for this role. During role install, if no tags are available,
