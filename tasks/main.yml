@@ -16,6 +16,4 @@
 
 - include: deploy.yml
 
-- include: services.yml
-
 - include: metadata.yml

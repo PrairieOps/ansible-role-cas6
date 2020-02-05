@@ -15,7 +15,7 @@
   file:
     path: "{{ item }}"
     state: directory
-    owner: tomcat
+    owner: root
     group: wheel
     mode: 0775
     recurse: yes
@@ -44,17 +44,6 @@
     url: "{{ cas_pac4j_saml.idp_md_url }}"
     dest: /etc/cas/samlIdP.xml
   when: ((cas_pac4j_saml is defined) and (cas_pac4j_saml is not none))
-
-- name: Place server.xml for Tomcat
-  template:
-    src: server.xml.j2
-    dest: /usr/share/tomcat/conf/server.xml
-
-- name: Configure JAVA_OPTS for Tomcat
-  lineinfile:
-    dest: /usr/share/tomcat/conf/tomcat.conf
-    line: >
-      JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Xmx512m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC"
 
 - name: Generate a cert keystore for SAML2 Client
   command: >
