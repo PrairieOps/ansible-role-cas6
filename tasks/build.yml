@@ -32,7 +32,7 @@
 
 - name: Get cookie encryption key value
   shell: >
-   cat /etc/cas/tgc.encryption.key.json | jq --raw-output '.k'
+   cat /etc/cas/tgc.encryption.key.json | /opt/jq/bin/jq --raw-output '.k'
   register: cas_tgc_encryption_key
 
 - name: Set encryption key value as fact
@@ -41,7 +41,7 @@
 
 - name: Get cookie signing key value
   shell: >
-   cat /etc/cas/tgc.signing.key.json | jq --raw-output '.k'
+   cat /etc/cas/tgc.signing.key.json | /opt/jq/bin/jq --raw-output '.k'
   register: cas_tgc_signing_key
 
 - name: Set signing key value as fact

@@ -1,6 +1,6 @@
 ---
 # tasks file for cas
-- include: maven.yml
+- include: unpackaged-utils.yml
 
 - include: yum.yml
 

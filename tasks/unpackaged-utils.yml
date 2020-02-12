@@ -1,0 +1,17 @@
+---
+- name: Download and extract Apache Maven
+  unarchive:
+    src: http://mirrors.sonic.net/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+    dest: /opt/
+    remote_src: yes
+
+- name: Ensure jq directory exists
+  file:
+    path: /opt/jq/bin
+    state: directory
+
+- name: Download jq
+  get_url:
+    url: https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
+    dest: /opt/jq/bin/jq
+    mode: 0775
