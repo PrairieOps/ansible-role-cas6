@@ -17,8 +17,6 @@
   args:
     chdir: /usr/src/json-web-key-generator
     creates: /usr/src/json-web-key-generator/target/json-web-key-generator-0.3-jar-with-dependencies.jar
-  environment:
-    JAVA_HOME: /usr/lib/jvm/java
 
 - name: Generate cookie keys
   command: >
@@ -26,8 +24,6 @@
   args:
     chdir: /usr/src/json-web-key-generator/target
     creates: "/etc/cas/{{ item.name}}.json"
-  environment:
-    JAVA_HOME: /usr/lib/jvm/java
   with_items:
     - name: tgc.encryption.key
       size: 256
@@ -92,5 +88,3 @@
     /opt/apache-maven-3.6.3/bin/mvn clean package
   args:
     chdir: /usr/src/cas-overlay
-  environment:
-    JAVA_HOME: /usr/lib/jvm/java
