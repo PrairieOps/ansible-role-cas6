@@ -13,7 +13,7 @@
 
 - name: Build JSON Web Key Generator
   command: >
-    bash -c "/opt/apache-maven-3.6.3/bin/mvn"
+    bash -c "/opt/apache-maven-3.6.3/bin/mvn package"
   args:
     chdir: /usr/src/json-web-key-generator
     creates: /usr/src/json-web-key-generator/target/json-web-key-generator-0.3-jar-with-dependencies.jar
