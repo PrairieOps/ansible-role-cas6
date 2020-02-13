@@ -16,4 +16,5 @@
 
 - include: deploy.yml
 
-- include: metadata.yml
+# SAML IdP metadata isn't generated yet during the build stage of a container.
+#- include: metadata.yml
