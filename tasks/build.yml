@@ -25,36 +25,6 @@
     chdir: /usr/src/json-web-key-generator
     creates: /usr/src/json-web-key-generator/target/json-web-key-generator-0.3-jar-with-dependencies.jar
 
-- name: Generate cookie keys
-  command: >
-   java -jar json-web-key-generator-0.3-jar-with-dependencies.jar -t oct -s "{{ item.size }}" -o /etc/cas/"{{ item.name }}".json
-  args:
-    chdir: /usr/src/json-web-key-generator/target
-    creates: "/etc/cas/{{ item.name}}.json"
-  with_items:
-    - name: tgc.encryption.key
-      size: 256
-    - name: tgc.signing.key
-      size: 512
-
-- name: Get cookie encryption key value
-  shell: >
-   cat /etc/cas/tgc.encryption.key.json | /opt/jq/bin/jq --raw-output '.k'
-  register: cas_tgc_encryption_key
-
-- name: Set encryption key value as fact
-  set_fact:
-    cas_tgc_encryption_key: "{{ cas_tgc_encryption_key.stdout }}"
-
-- name: Get cookie signing key value
-  shell: >
-   cat /etc/cas/tgc.signing.key.json | /opt/jq/bin/jq --raw-output '.k'
-  register: cas_tgc_signing_key
-
-- name: Set signing key value as fact
-  set_fact:
-    cas_tgc_signing_key: "{{ cas_tgc_signing_key.stdout }}"
-
 - name: Overlay src and target directories are absent
   file:
     path: "{{ item }}"

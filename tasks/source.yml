@@ -1,12 +1,5 @@
 ---
 
-- name: JSON Web Key Generator
-  git:
-    repo: https://github.com/mitreid-connect/json-web-key-generator.git
-    dest: /usr/src/json-web-key-generator
-    version: json-web-key-generator-0.3
-    force: yes
-
 - name: CAS Overlay Template
   git:
     repo: "{{ cas_overlay_repo }}"

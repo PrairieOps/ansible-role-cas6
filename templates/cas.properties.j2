@@ -49,16 +49,6 @@ cas.samlSP.office365.attributes=IDPEmail,ImmutableID
 cas.host.name={{ cas_host_name }}
 
 ##
-# CAS SSO Cookie Generation & Security
-# See https://github.com/mitreid-connect/json-web-key-generator
-#
-# Do note that the following settings MUST be generated per deployment.
-#
-# The encryption secret key. By default, must be a octet string of size 256.
-cas.tgc.encryption.key={{ cas_tgc_encryption_key }}
-
-# The signing secret key. By default, must be a octet string of size 512.
-cas.tgc.signing.key={{ cas_tgc_signing_key }}
 
 # Decides whether SSO cookie should be created only under secure connections.
 cas.tgc.secure=true
