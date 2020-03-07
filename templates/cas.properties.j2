@@ -20,6 +20,13 @@
 cas.server.name={{ cas_server_name }}
 cas.server.prefix=${cas.server.name}
 
+# TLS is offloaded.
+server.ssl.enabled=false
+cas.server.tomcat.http.port=8080
+cas.server.tomcat.http.protocol=org.apache.coyote.http11.Http11NioProtocol
+cas.server.tomcat.http.enabled=true
+cas.server.tomcat.http.attributes.attributeName=attributeValue
+
 {% if ((cas_saml2_idp is defined) and (cas_saml2_idp is not none)) %}
 # SAML2 IdP specific settings:
 cas.authn.samlIdp.entityId=${cas.server.name}/idp
@@ -42,16 +49,9 @@ cas.samlSP.office365.nameIdAttribute=scopedImmutableID
 cas.samlSP.office365.attributes=IDPEmail,ImmutableID
 {% endif %}
 
-##
-# Unique CAS node name
-# host.name is used to generate unique Service Ticket IDs and SAMLArtifacts.  This is usually set to the specific
-# hostname of the machine running the CAS node, but it could be any label so long as it is unique in the cluster.
-cas.host.name={{ cas_host_name }}
-
-##
 
 # Decides whether SSO cookie should be created only under secure connections.
-cas.tgc.secure=true
+#cas.tgc.secure=true
 
 # The expiration value of the SSO cookie
 cas.tgc.maxAge=-1
