@@ -8,5 +8,5 @@
 - name: Deploy war
   copy:
     remote_src: True
-    src: /usr/src/cas-overlay/target/cas.war
+    src: /usr/src/cas-overlay/build/libs/cas.war
     dest: /cas-overlay/cas.war

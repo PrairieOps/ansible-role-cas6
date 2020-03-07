@@ -11,6 +11,13 @@
   with_items:
     - /etc/cas/config
 
+
+- name: Initialize CAS Configuration
+  command: >
+    ./gradlew copyCasConfiguration
+  args:
+    chdir: /usr/src/cas-overlay
+
 - name: Build JSON Web Key Generator
   command: >
     bash -c "/opt/apache-maven-3.6.3/bin/mvn package"
@@ -56,13 +63,12 @@
     - /usr/src/cas-overlay/src
     - /usr/src/cas-overlay/target
 
-- name: Overlay src and target directories exist
+- name: Overlay src directories exist
   file:
     path: "{{ item }}"
     state: directory
     recurse: yes
   with_items:
-    - /usr/src/cas-overlay/target
     - /usr/src/cas-overlay/src/main/webapp/WEB-INF/classes/services
     - /usr/src/cas-overlay/src/main/webapp/WEB-INF/spring-configuration
 
@@ -85,6 +91,6 @@
 
 - name: Build CAS
   command: >
-    /opt/apache-maven-3.6.3/bin/mvn clean package
+    ./gradlew clean build
   args:
     chdir: /usr/src/cas-overlay
